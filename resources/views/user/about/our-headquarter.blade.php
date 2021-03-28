@@ -6,7 +6,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-             <span class="directory">About CPB/Corporate Structure/</span>
+             <span class="directory">About CPB/Our-Headquaters/</span>
             <div class="page-title-name">
               <h1>C.P. Headquarters</h1>
               <p>We know the secret of success</p>

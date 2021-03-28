@@ -6,12 +6,103 @@ use Illuminate\Http\Request;
 use App\Admin;
 use Session;
 use App\UserReg;
-use App\Recruit;
 use DB;
 use App\VisitorLog;
 
+use App\History;
+use App\Mission;
+use App\ChairmanMsg;
+use App\PresidentMsg;
+use App\BUoperation;
+use App\Structure;
+use App\Headquarter;
+use App\Press;
+use App\Trdev;
+use App\Event;
+use App\SR;
+use App\Community;
+use App\News;
+use App\Product;
+use App\Recruit;
+
 class AdminController extends Controller
 {
+    //For notification Count
+    public static function HistoryNotify(){
+       return History::where('status', '!=', '1' )->count();
+    }
+    //For notification Count
+    public static function MissionNotify()
+    {
+        return Mission::where('status', '!=', '1')->count();
+    }
+    //For notification Count
+    public static function ChairmanMsgNotify()
+    {
+        return ChairmanMsg::where('status', '!=', '1')->count();
+    }
+    //For notification Count
+    public static function PresidentMsgNotify()
+    {
+        return PresidentMsg::where('status', '!=', '1')->count();
+    }
+    //For notification Count
+    public static function BUoperationNotify()
+    {
+        return BUoperation::where('status', '!=', '1')->count();
+    }
+    //For notification Count
+    public static function StructureNotify()
+    {
+        return Structure::where('status', '!=', '1')->count();
+    }
+    //For notification Count
+    public static function HeadquarterNotify()
+    {
+        return Headquarter::where('status', '!=', '1')->count();
+    }
+    //For notification Count
+    public static function SRNotify()
+    {
+        return SR::where('status', '!=', '1')->count();
+    }
+    //For notification Count
+    public static function CommunityNotify()
+    {
+        return Community::where('status', '!=', '1')->count();
+    }
+    //For notification Count
+    public static function NewsNotify()
+    {
+        return News::where('status', '!=', '1')->count();
+    }
+    //For notification Count
+    public static function PressNotify()
+    {
+        return Press::where('status', '!=', '1')->count();
+    }
+    //For notification Count
+    public static function TrdevNotify()
+    {
+        return Trdev::where('status', '!=', '1')->count();
+    }
+    //For notification Count
+    public static function EventNotify()
+    {
+        return Event::where('status', '!=', '1')->count();
+    }
+    //For notification Count
+    public static function RecruitNotify()
+    {
+        return Recruit::where('status', '!=', '1')->count();
+    }
+    //For notification Count
+    public static function ProductNotify()
+    {
+        return Product::where('status', '!=', '1')->count();
+    }
+
+
     public function Dashboard()
     {
         $adminData = Admin::count();

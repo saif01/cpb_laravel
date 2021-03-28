@@ -57,7 +57,7 @@
                                     </ul>
                                 </div>
                                 <div class="entry-content">
-                                    {{ $product->details }}
+                                    {!! $product->details !!}
                                 </div>
                                 <div class="entry-share clearfix">
                                     <div class="entry-button">

@@ -20,6 +20,24 @@
 
         <!--=================================contact-->
 
+        @php
+
+        function formatMobileNumber($phone_number)
+        {
+            $cleaned = preg_replace('/[^[:digit:]]/', '', $phone_number);
+            preg_match('/(\d{4})(\d{3})(\d{4})/', $cleaned, $matches);
+            return "(+88 ) {$matches[1]} - {$matches[2]}-{$matches[3]}";
+        }
+
+        function formatTelePhoneNumber($phone_number)
+        {
+            $cleaned = preg_replace('/[^[:digit:]]/', '', $phone_number);
+            preg_match('/(\d{2})(\d{4})(\d{4})(\d{1})/', $cleaned, $matches);
+            return "(+88 ) {$matches[1]} - {$matches[2]} {$matches[3]}-{$matches[4]}";
+        }
+
+        @endphp
+
     <section class="theme-bg contact-2 clearfix o-hidden">
 
       <div class="container">
@@ -35,10 +53,11 @@
 
                 <ul class="addresss-info list-unstyled">
                   <li><i class="ti-map-alt"></i>
-                    <p><b>Address:</b>{!! $contact->address  !!}</p>
+                    <p><b>Address : </b> {!! $contact->address  !!}</p>
                   </li>
-                  <li><i class="ti-mobile"></i><b>Phone:</b>{{ $contact->phone }}</li>
-                  <li><i class="ti-email"></i><b>Email:</b>{{ $contact->email }}</li>
+                  <li><i class="ti-mobile"></i><b>Phone : </b> {{ formatMobileNumber($contact->phone) }}</li>
+                  <li><i class="ti-mobile"></i><b>Telephone : </b> {{ formatTelePhoneNumber($contact->telephone) }}</li>
+                  <li><i class="ti-email"></i><b>Email : </b> {{ $contact->email }}</li>
                 </ul>
 
 

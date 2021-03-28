@@ -41,13 +41,19 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label>Phone</label>
                                             <input type="number" class="form-control" name="phone" placeholder="Enter Company Phone Number" value="{{ $data->phone }}" required="required">
                                         </div>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label>Telephone</label>
+                                            <input type="number" class="form-control" name="telephone" placeholder="Enter Company Telephone Number" value="{{ $data->telephone }}" required="required">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
                                         <div class="form-group">
                                             <label>E-mail</label>
                                             <input type="email" class="form-control" name="email" placeholder="Enter Company E-mail Address" value={{ $data->email }} required="required">

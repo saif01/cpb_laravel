@@ -38,6 +38,7 @@
             {{-- About Section --}}
                <li class="has-sub nav-item"><a href="#"><i class="ft-package cyan"></i><span data-i18n="" class="menu-title">About</span></a>
                 <ul class="menu-content">
+
                    {{--  History Section --}}
                   <li class="has-sub"><a href="#" class="menu-item"><i class="ft-chevrons-right green"></i> History</a>
                     <ul class="menu-content">
@@ -45,6 +46,17 @@
                       <li><a href="{{ route('history.all') }}" class="menu-item"><i class="ft-wind"></i> History All</a></li>
                     </ul>
                   </li>
+
+
+                   {{--  Vison Section --}}
+                   <li class="has-sub"><a href="#" class="menu-item"><i class="ft-chevrons-right green"></i> Vison</a>
+                    <ul class="menu-content">
+                      <li><a href="{{ route('vision.add') }}" class="menu-item"><i class="ft-edit-3"></i> Vison Add</a></li>
+                      <li><a href="{{ route('vision.all') }}" class="menu-item"><i class="ft-wind"></i> Vison All</a></li>
+                    </ul>
+                  </li>
+
+
                   {{-- Mission Section --}}
                    <li class="has-sub"><a href="#" class="menu-item"><i class="ft-chevrons-right green"></i> Mission</a>
                     <ul class="menu-content">
@@ -52,6 +64,8 @@
                       <li><a href="{{ route('mission.all') }}" class="menu-item"><i class="ft-wind"></i> Mission All</a></li>
                     </ul>
                   </li>
+
+
                   {{-- Business Operation Section --}}
                    <li class="has-sub"><a href="#" class="menu-item"><i class="ft-chevrons-right green"></i> B.U. Operation</a>
                     <ul class="menu-content">

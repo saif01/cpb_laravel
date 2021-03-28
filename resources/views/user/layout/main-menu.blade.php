@@ -1,13 +1,22 @@
 @php
    use App\Http\Controllers\ForntEndController;
-   $product= ForntEndController::Porduct();
-   //print_r($product);
-//    foreach ($product as $roduct_row)
-//        {
-//           echo $roduct_row->name;
-//        }
+   $Object = new ForntEndController();
+   $product = $Object->ProductList();
 
 @endphp
+
+<style>
+
+    .menu-list-items{
+        height: 55px !important;
+    }
+
+    .header.fancy .mega-menu .menu-logo{
+        padding: 8px 0px;
+    }
+
+</style>
+
 <div class="menu">
     <div class="container">
         <div class="row">
@@ -15,12 +24,12 @@
                 <!-- menu start -->
                 <nav id="menu" class="mega-menu">
                     <!-- menu list items container -->
-                    <section class="menu-list-items" style="border-radius: 50px; ">
+                    <section class="menu-list-items">
                         <!-- menu logo -->
                         <ul class="menu-logo">
 
                             <li>
-                                <a href="index"><img id="logo_img" src="{{ asset('front-end/coustom/logo/cpb.png') }}" alt="C.P.Bangladesh"> </a>
+                                <a href="{{ route('index') }}"><img id="logo_img" src="{{ asset('front-end/coustom/logo/cpb.png') }}" alt="C.P.Bangladesh"> </a>
                             </li>
                         </ul>
                         <!-- menu links -->
@@ -32,6 +41,7 @@
                                     <!-- drop down multilevel  -->
                                     <ul class="drop-down-multilevel">
                                         <li><a href="{{ route('history') }}"> Our History </a></li>
+                                        <li><a href="{{ route('vision') }}"> Our Vision </a></li>
                                         <li><a href="{{ route('mission') }}"> Our Mission </a></li>
                                         <li><a href="{{ route('chairman-message') }}"> Chairman Message </a></li>
                                         <li><a href="{{ route('president-message') }}"> President Message </a></li>

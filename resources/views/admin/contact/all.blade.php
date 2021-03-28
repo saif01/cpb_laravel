@@ -38,19 +38,26 @@
                                 <tr class="text-center">
                                     <th>Address</th>
                                     <th>Contact</th>
+                                    <th>telephone</th>
                                     <th>E-mail</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+
+
+
                                 @foreach ($allData as $row )
                                 <tr>
                                     <td>
                                         {!! $row->address !!}
                                     </td>
                                     <td>
-                                         {{ $row->phone }}
+                                         {{  $row->phone  }}
                                     </td>
+                                    <td>
+                                        {{ $row->telephone }}
+                                   </td>
                                     <td>
                                          {{ $row->email }}
                                     </td>

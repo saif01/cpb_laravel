@@ -1,7 +1,7 @@
         <footer class="footer page-section-pt black-bg">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-2 col-sm-6 sm-mb-30">
+                    {{-- <div class="col-lg-2 col-sm-6 sm-mb-30">
                         <div class="footer-useful-link footer-hedding">
                             <h6 class="text-white mb-30 mt-10 text-uppercase">Navigation</h6>
                             <ul>
@@ -12,7 +12,7 @@
                                 <li><a href="contact">Contact Us</a></li>
                             </ul>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="col-lg-2 col-sm-6 sm-mb-30">
                         <div class="footer-useful-link footer-hedding">
                             <h6 class="text-white mb-30 mt-10 text-uppercase">Useful Link</h6>
@@ -25,13 +25,13 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-sm-6 xs-mb-30">
+                    <div class="col-lg-2 col-sm-6 xs-mb-30">
                         <h6 class="text-white mb-30 mt-10 text-uppercase">Contact Us</h6>
                         <ul class="addresss-info">
                             <li><i class="fa fa-map-marker"></i>
                                 <p>Address: Holding No : E-236, Ward No : 007, Chandra, Kaliakoir, Gazipur</p>
                             </li>
-                            <li><i class="fa fa-phone"></i> <a href="tel:8801707080401"> <span>8801707080401</span> </a> </li>
+                            <li><i class="fa fa-phone"></i> <a href="tel:8801708809090"> <span>8801708 80 90 90</span> </a> </li>
                             <li><i class="fa fa-envelope-o"></i>Email: info@cpbangladesh.com</li>
                         </ul>
                     </div>
@@ -55,6 +55,19 @@
                             </div>
                         </div>
                     </div>
+
+                    <div class="col-lg-4 col-sm-6">
+                        <h6 class="text-white mb-30 mt-10 text-uppercase">We Certified From</h6>
+
+                        <div class="footer-Newsletter">
+                            <div class="row text-center">
+
+                              <img src="{{ asset('images/footer/halal.jpg') }}" sizes="" class="img-thumbnail rounded d-block" alt="logo">
+
+                            </div>
+                        </div>
+                    </div>
+
 
                 </div>
                 <div class="footer-widget mt-20">

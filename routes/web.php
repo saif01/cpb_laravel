@@ -3,6 +3,7 @@
 Route::get('/','ForntEndController@Index')->name('index');
 //About
 Route::get('/about-history', 'ForntEndController@History')->name('history');
+Route::get('/about-vision', 'ForntEndController@Vision')->name('vision');
 Route::get('/about-mission', 'ForntEndController@Mission')->name('mission');
 Route::get('/about-chairman-message', 'ForntEndController@ChairmanMessage')->name('chairman-message');
 Route::get('/about-president-message', 'ForntEndController@PresidentMessage')->name('president-message');
@@ -113,6 +114,16 @@ Route::group(['middleware' => 'login'], function () {
                 Route::get('/delete/{id}', 'HistoryController@Delete')->name('history.delete')->middleware('delete');
                 Route::get('/edit/{id}', 'HistoryController@EditFormShow')->name('history.edit');
                 Route::post('/update/{id}', 'HistoryController@Update')->name('history.update');
+            });
+
+             //history
+             Route::group(['prefix' => 'vision'], function () {
+                Route::get('/add', 'VisionController@Add')->name('vision.add');
+                Route::get('/all', 'VisionController@All')->name('vision.all');
+                Route::post('/insert', 'VisionController@Insert')->name('vision.insert');
+                Route::get('/delete/{id}', 'VisionController@Delete')->name('vision.delete')->middleware('delete');
+                Route::get('/edit/{id}', 'VisionController@EditFormShow')->name('vision.edit');
+                Route::post('/update/{id}', 'VisionController@Update')->name('vision.update');
             });
 
 
@@ -297,3 +308,15 @@ Route::group(['middleware' => 'login'], function () {
 
 });
 //end Loging middleware
+
+
+Route::get('/clear', function() {
+    Artisan::call('cache:clear');
+    Artisan::call('config:clear');
+    Artisan::call('config:cache');
+    Artisan::call('view:clear');
+    return "Cleared!";
+ });
+
+
+ Route::get('/test', 'ContactController@Test');

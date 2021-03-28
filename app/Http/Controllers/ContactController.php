@@ -25,6 +25,7 @@ class ContactController extends Controller
 
             $data->address = request('address');
             $data->phone = request('phone');
+            $data->telephone = request('telephone');
             $data->email = request('email');
             $successData = $data->save();
             //echo $data;
@@ -79,6 +80,7 @@ class ContactController extends Controller
         $data = Contact::find($id);
         $data->address = request('address');
         $data->phone = request('phone');
+        $data->telephone = request('telephone');
         $data->email = request('email');
         $successData = $data->save();
         //echo $data;
@@ -96,6 +98,32 @@ class ContactController extends Controller
             );
             return Redirect()->back()->with($notification);
         }
+    }
+
+
+    //Test Function
+    public function Test(){
+
+
+
+        function formatMobileNumber($phone_number)
+        {
+            $cleaned = preg_replace('/[^[:digit:]]/', '', $phone_number);
+            preg_match('/(\d{4})(\d{3})(\d{4})/', $cleaned, $matches);
+            return "(+88 ) {$matches[1]} - {$matches[2]}-{$matches[3]}";
+        }
+
+        function formatTelePhoneNumber($phone_number)
+        {
+            $cleaned = preg_replace('/[^[:digit:]]/', '', $phone_number);
+            preg_match('/(\d{2})(\d{4})(\d{4})(\d{1})/', $cleaned, $matches);
+            return "(+88 ) {$matches[1]} - {$matches[2]} {$matches[3]}-{$matches[4]}";
+        }
+
+        echo formatMobileNumber("01707080401");
+
+        echo formatTelePhoneNumber("06822518124");
+
     }
 
 }

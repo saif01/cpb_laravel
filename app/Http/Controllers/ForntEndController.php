@@ -10,6 +10,7 @@ use App\VisitorInfo\UserInfo;
 
 use App\Slider;
 use App\History;
+use App\Vision;
 use App\Mission;
 use App\ChairmanMsg;
 use App\PresidentMsg;
@@ -29,11 +30,16 @@ use App\Product;
 use App\Recruit;
 use App\VisitorLog;
 
+
 class ForntEndController extends Controller
 {
     //Function assecc from blade file
-    public static function Porduct(){
-        return Product::where('status','1')->get();
+    // public static function Porduct(){
+    //     return Product::where('status','1')->get();
+    // }
+
+    public function ProductList(){
+        return Product::where('status','1')->orderBy('id', 'asc')->get();
     }
 
     //Index
@@ -115,15 +121,26 @@ class ForntEndController extends Controller
     public function History()
     {
         $history = History::where('status', '1')
-            ->orderBy('id', 'desc')
+            ->orderBy('id', 'asc')
             ->get();
         return view('user.about.history')->with('history', $history);
     }
+
+     //Vision
+     public function Vision()
+     {
+         $vision = Vision::where('status', '1')
+             ->orderBy('id', 'asc')
+             ->get();
+         return view('user.about.vision')->with('vision', $vision);
+     }
+
+
     //Mission
     public function Mission()
     {
         $mission = Mission::where('status', '1')
-            ->orderBy('id', 'desc')
+            ->orderBy('id', 'asc')
             ->get();
         return view('user.about.mission')->with('mission', $mission);
     }
@@ -151,7 +168,7 @@ class ForntEndController extends Controller
     public function BusinessOperation()
     {
         $buOperation = BUoperation::where('status', '1')
-            ->orderBy('id', 'desc')
+            ->orderBy('id', 'asc')
             ->get();
         return view('user.about.business-operations')->with('buOperation', $buOperation);
     }
@@ -160,7 +177,7 @@ class ForntEndController extends Controller
     public function CorporateStructure()
     {
         $structure = Structure::where('status', '1')
-            ->orderBy('id', 'desc')
+            ->orderBy('id', 'asc')
             ->take(1)
             ->first();
         return view('user.about.corporate-structure')->with('structure', $structure);
@@ -170,7 +187,7 @@ class ForntEndController extends Controller
     public function OurHeadquarters()
     {
         $headquarter = Headquarter::where('status', '1')
-            ->orderBy('id', 'desc')
+            ->orderBy('id', 'asc')
             ->get();
         return view('user.about.our-headquarter')->with('headquarter', $headquarter);
     }
